@@ -1,0 +1,165 @@
+**Consulta2:
+
+SELECT p.ID_Proyecto ID, p.Constructora, p.Ciudad , p.Clasificacion , t.Estrato , 
+		(l.Nombre || ' ' || l.Primer_Apellido || ' ' || l.Segundo_Apellido) AS LIDER
+FROM Proyecto p 
+INNER JOIN Tipo t ON (t.ID_Tipo = p.ID_Tipo)
+INNER JOIN Lider l ON (l.ID_Lider = p.ID_Lider) 
+WHERE p.Banco_Vinculado = 'Davivienda'
+ORDER BY p.Fecha_Inicio DESC, p.Ciudad ASC, p.Constructora ;
+
+**Resultado Consulta2:
+
+ID          Constructora      Ciudad      Clasificacion   Estrato     LIDER
+----------  ----------------  ----------  --------------  ----------  -------------------
+293         Ingenieros Ltda.  Armenia     Casa Campestre  6           Nadia Pelaez Galvis
+306         Pegaso            Armenia     Casa            2           Carlos Jimenez Fede
+196         Arquitectura S.A  Barranquil  Condominio      6           Juana Ocampo Velez
+6           Hermanos Gallego  Barranquil  Apartamento     6           Juana Perez Galvis
+215         Hermanos Gallego  Barranquil  Apartamento     3           Carla Rodriguez And
+314         Pegaso            Barranquil  Apartamento     3           Carla Gomez Parra
+159         Edificios y Edif  Bogota      Apartaestudio   6           Paul Escobar Ortiz
+107         Pegaso            Bogota      Casa Campestre  6           Jorge Gomez Velez
+76          Ingenieros Ltda.  Bucaramang  Apartaestudio   6           Carlos Jimenez Figu
+201         Arquitectura S.A  Cartagena   Condominio      5           Carlos Linares Figu
+336         Edificios y Edif  Cartagena   Casa Campestre  6           Carlos Jimenez Fede
+29          Ingenieros Ltda.  Cartago     Casa            6           Paul Escobar Ortiz
+19          Pegaso            Monteria    Apartamento     3           Juana Perez Galvis
+15          Arquitectura S.A  Neiva       Apartamento     3           Nadia Lopez Ortiz
+155         Edificios y Edif  Neiva       Apartamento     5           Homero Caceres Roja
+355         Hermanos Gallego  Neiva       Casa            2           Monica Rivera Herna
+225         Arquitectura S.A  Santa Mart  Casa            5           Libia Pelaez Hernan
+392         Ingenieros Ltda.  Sta. Rosa   Casa Campestre  6           Carla Rodriguez And
+221         Edificios y Edif  Armenia     Casa Campestre  6           Juana Rodriguez Vel
+217         Ingenieros Ltda.  Armenia     Condominio      5           Carla Gomez Parra
+181         Ingenieros Ltda.  Bucaramang  Condominio      5           Roncancio Orozco Ar
+128         Ingenieros Ltda.  Cartagena   Condominio      2           Paul Sucerquia Hern
+367         Arquitectura S.A  Ibague      Apartaestudio   5           Paul Perez Arias
+26          Ingenieros Ltda.  Ibague      Condominio      3           Homero Caceres Roja
+115         Ingenieros Ltda.  Ibague      Casa            3           Carlos Camargo Aria
+338         Pegaso            Ibague      Casa Campestre  6           Carla Rodriguez And
+264         Edificios y Edif  Monteria    Casa            6           Juana Ocampo Velez
+161         Hermanos Gallego  Pereira     Casa            6           Maradona Arteaga Fi
+27          Arquitectura S.A  Salento     Casa Campestre  6           Jorge Gomez Federer
+141         Ingenieros Ltda.  Salento     Condominio      6           Carla Gomez Parra
+226         Ingenieros Ltda.  Salento     Condominio      2           Paul Jimenez Parra
+359         Hermanos Gallego  Santa Mart  Casa Campestre  5           Bart Linares Federe
+185         Ingenieros Ltda.  Sta. Rosa   Casa Campestre  2           Libia Pelaez Rojas
+197         Hermanos Gallego  Armenia     Apartamento     6           Libia Pelaez Hernan
+289         Edificios y Edif  Bogota      Casa Campestre  2           Homero Caceres Roja
+383         Edificios y Edif  Bogota      Condominio      2           Carlos Jimenez Figu
+183         Hermanos Gallego  Bogota      Casa            6           Bart Rivera Ortiz
+171         Pegaso            Cartagena   Apartamento     6           Carla Barrera Cuadr
+44          Hermanos Gallego  Neiva       Condominio      6           Maradona Arteaga Fi
+138         Pegaso            Neiva       Casa Campestre  5           Maradona Jimenez Go
+203         Pegaso            Pereira     Casa            3           Jack Escobar Cuadra
+65          Edificios y Edif  Quibdo      Apartaestudio   3           Luis Barrera Parra
+283         Arquitectura S.A  Salento     Apartamento     6           Diana Arteaga Rojas
+57          Ingenieros Ltda.  Santa Mart  Condominio      6           Maradona Jimenez Go
+86          Edificios y Edif  Sta. Rosa   Condominio      6           Jorge Gomez Federer
+166         Ingenieros Ltda.  Sta. Rosa   Apartamento     6           Jorge Caceres Ortiz
+382         Arquitectura S.A  Barranquil  Casa            5           Juana Rodriguez Vel
+165         Edificios y Edif  Barranquil  Apartaestudio   5           Nadia Ocampo Godoy
+87          Pegaso            Barranquil  Apartaestudio   3           Jorge Caceres Ortiz
+192         Edificios y Edif  Bogota      Apartamento     6           Diana Rivera Arias
+302         Edificios y Edif  Bogota      Casa            3           Homero Rodriguez Ar
+372         Edificios y Edif  Bogota      Apartaestudio   2           Roncancio Orozco Ar
+346         Ingenieros Ltda.  Bogota      Apartamento     2           Diana Rivera Arias
+351         Pegaso            Bucaramang  Apartaestudio   3           Paul Jimenez Parra
+364         Edificios y Edif  Cartagena   Apartaestudio   6           Libia Pelaez Rojas
+195         Ingenieros Ltda.  Cartagena   Apartamento     2           Carlos Jimenez Figu
+222         Pegaso            Cartagena   Apartaestudio   3           Carla Barrera Cuadr
+370         Edificios y Edif  Cartago     Casa            2           Carla Linares Velez
+251         Edificios y Edif  Ibague      Apartaestudio   2           Libia Pelaez Hernan
+2           Pegaso            Ibague      Casa Campestre  3           Libia Pelaez Hernan
+396         Hermanos Gallego  Manizales   Casa            5           Luis Barrera Parra
+315         Arquitectura S.A  Salento     Apartaestudio   6           Nadia Lopez Ortiz
+
+****Consulta4:
+
+SELECT p.ID_Proyecto, SUM(c.Cantidad*mc.Precio_Unidad) AS VALOR
+FROM Proyecto p 
+INNER JOIN Compra c ON c.ID_Proyecto = p.ID_Proyecto 
+INNER JOIN MaterialConstruccion mc ON mc.ID_MaterialConstruccion = c.ID_MaterialConstruccion 
+WHERE c.Pagado = 'Si'
+GROUP BY p.ID_Proyecto 
+HAVING SUM(c.Cantidad*mc.Precio_Unidad) > 50000
+ORDER BY VALOR DESC;
+
+****Reultado Consulta4:
+
+ID_Proyecto  VALOR                
+-----------  ----------            
+147          100507
+238          100227
+100          94757
+81           93554
+131          83903
+9            82878
+150          79137
+133          78330
+266          76676
+65           76542
+73           74899
+225          73682
+160          73228
+331          72108
+76           69880
+300          69620
+278          69145
+354          68139
+145          66270
+386          65893
+359          65502
+187          64828
+287          64016
+211          63430
+60           62384
+318          61062
+360          60595
+265          60272
+124          60165
+38           59238
+310          59212
+158          57589
+267          56635
+385          56544
+308          56136
+323          55459
+366          54915
+97           53435
+276          53303
+361          53052
+297          53039
+324          52893
+222          51449
+375          50991
+367          50948
+377          50373	
+
+*****Consulta5:
+
+SELECT (l.Nombre || ' ' || l.Primer_Apellido || ' ' || l.Segundo_Apellido) AS LIDER,
+		SUM(c.Cantidad*mc.Precio_Unidad) AS VALOR
+	FROM Proyecto p 
+	INNER JOIN Compra c ON c.ID_Proyecto = p.ID_Proyecto 
+	INNER JOIN MaterialConstruccion mc ON mc.ID_MaterialConstruccion = c.ID_MaterialConstruccion 
+	INNER JOIN Lider l ON l.ID_Lider = p.ID_Lider 
+	GROUP BY LIDER
+	ORDER BY VALOR
+	LIMIT 10;
+
+*****Resultado Consulta5:
+
+LIDER                VALOR
+-------------------  ----------
+Carla Jimenez Velez  131469
+George Falcon Arias  161020
+Jorge Jimenez Gonza  185353
+Paul Perez Arias     201377
+Nadia Escobar Rojas  210770
+Jack Arteaga Andrad  236388
+Homero Perez Parra   241126
+Paul Escobar Ortiz   241229
+Monica Rivera Herna  244692
+Paul Barrera Hernan  250239

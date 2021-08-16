@@ -1,6 +1,6 @@
 package co.edu.utp.misiontic2022.c2;
 
-import co.edu.utp.misiontic2022.c2.view.ReportesView;
+import co.edu.utp.misiontic2022.c2.view.Frmconsultas;
 
 /**
  * Hello world!
@@ -9,11 +9,8 @@ import co.edu.utp.misiontic2022.c2.view.ReportesView;
 public class App {
 
     public static void main(String[] args) {
-        var view = new ReportesView();
-        var banco = "Davivienda";
-        view.ProyectosFinanciadosPorBanco(banco);
-        var limiteInferior = 50_000d;
-        view.totalPagadoPorProyectosSuperioresALimite(limiteInferior);
-        view.lideresQueMenosGastan();
+        var view = new Frmconsultas();
+        view.setVisible(true);
+        
     }
 }
